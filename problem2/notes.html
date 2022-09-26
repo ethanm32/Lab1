@@ -13,12 +13,16 @@
     <input type="text" id="text-note">
     <button onclick="createNote()">Add note</button>
     <script>
+        let counter = 0;
         function createNote() {
+            counter++;
             let divnote = document.createElement('div');
             var text = document.getElementById("text-note").value;
             divnote.innerHTML += text;
+            divnote.setAttribute("id", "div" + counter);
             document.body.appendChild(divnote);
             var deleteBtn = document.createElement('button');
+            deleteBtn.setAttribute("id", "div" + counter)
             deleteBtn.innerHTML = "Delete";
             var editBtn = document.createElement('button');
             editBtn.innerHTML = "Edit";
@@ -27,7 +31,8 @@
             document.body.appendChild(editBtn);
 
             deleteBtn.onclick = function () {
-                divnote.innerHTML = "";
+                var id = event.srcElement.id;
+                document.getElementById(id).innerHTML = "";
                 deleteBtn.remove();
                 editBtn.remove();
             };
