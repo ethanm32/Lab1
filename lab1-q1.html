@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Grid</title>
+</head>
+<body>
+    <div class="grid-box">
+        <div class ="column">column 1</div>
+        <div class ="column">column 2</div>
+        <div class ="column">column 3</div>
+        <div class ="column">column 4</div>
+    </div>
+    
+    <style>
+        .column {
+            border: 1px solid black;
+            flex-grow: 0.25;
+                     
+        }
+
+        .grid-box {
+            display: flex;
+            flex-wrap:wrap;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 720px) {
+            .column {
+                width: 48%;
+            }
+        }
+
+        @media only screen and (max-width: 360px) {
+            .column {
+                width: 98%;
+            }
+        }
+
+    </style>
+</body>
+</html>
