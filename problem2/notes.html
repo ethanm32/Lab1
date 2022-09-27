@@ -10,6 +10,15 @@
     <h1> Notes APP</h1>
     <hr>
     <h4>Add a note below</h4>
+    <select name="colours" id="colour">
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+    </select>
+    
+    <br>
+    <br>
     <input type="text" id="text-note">
     <button onclick="createNote()">Add note</button>
     <script>
@@ -22,13 +31,18 @@
             divnote.setAttribute("id", "div" + counter);
             document.body.appendChild(divnote);
             var deleteBtn = document.createElement('button');
-            deleteBtn.setAttribute("id", "div" + counter)
+            deleteBtn.setAttribute("id", "div" + counter);
             deleteBtn.innerHTML = "Delete";
             var editBtn = document.createElement('button');
             editBtn.innerHTML = "Edit";
+            editBtn.setAttribute("id", "div" + counter);
             document.body.appendChild(deleteBtn);
             
             document.body.appendChild(editBtn);
+            var backgcol = document.getElementById('colour').value;
+            
+
+            divnote.style.backgroundColor = backgcol;
 
             deleteBtn.onclick = function () {
                 var id = event.srcElement.id;
@@ -36,7 +50,30 @@
                 deleteBtn.remove();
                 editBtn.remove();
             };
+
+            editBtn.onclick = function() {
+                var id = event.srcElement.id;
+                document.getElementById(id).contentEditable = "true"; 
+                var saveBtn = document.createElement('button');
+                saveBtn.innerHTML = "Save";
+                saveBtn.setAttribute("id", id);
+                
+                document.body.appendChild(saveBtn);
+                
+                saveBtn.onclick = function() {
+                    var saveId = event.srcElement.id; 
+                    console.log(counter);
+                    document.getElementById(saveId).contentEditable = "false";
+                    saveBtn.remove();
+                }
+            }   
+
+            return divnote.id;
         }
+
+    
+                  
+
 
 
     </script>
