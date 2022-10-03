@@ -16,10 +16,11 @@
         <option value="yellow">Yellow</option>
     </select>
     
-    <br>
-    <br>
-    <input type="text" id="text-note">
+    
+    <textarea id="text-note"></textarea>
     <button onclick="createNote()">Add note</button>
+    <br>
+    <br>
     <script>
         let counter = 0;
         function createNote() {
@@ -36,12 +37,16 @@
             editBtn.innerHTML = "Edit";
             editBtn.setAttribute("id", "div" + counter);
             document.body.appendChild(deleteBtn);
-            
+            divnote.style.width = "fit-content";
             document.body.appendChild(editBtn);
+            divnote.style.whiteSpace = "pre-wrap";
+            divnote.style.wordWrap = "word-break";
             var backgcol = document.getElementById('colour').value;
             
 
             divnote.style.backgroundColor = backgcol;
+            divnote.style.border = "1px solid black";
+            divnote.style.borderRadius = "5px";
 
             deleteBtn.onclick = function () {
                 var id = event.srcElement.id;
@@ -54,7 +59,7 @@
                 var id = event.srcElement.id;
                 document.getElementById(id).contentEditable = "true"; 
                 var saveBtn = document.createElement('button');
-                saveBtn.innerHTML = "Save";
+                saveBtn.innerHTML = "Save Changes";
                 saveBtn.setAttribute("id", id);
                 
                 document.body.appendChild(saveBtn);
@@ -72,4 +77,4 @@
     </script>
 </body>
 
-</html>
+</html>     
