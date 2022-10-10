@@ -10,13 +10,13 @@ let dogGifs = [
 //getting random image from the array we created before (we use math.floor and math.random to grab a random index in the array)
  
 
-var audio = document.createElement("AUDIO")
-document.body.appendChild(audio);
+var dogbark = document.createElement("AUDIO")
+document.body.appendChild(dogbark);
 
-audio.src = "https://upload.wikimedia.org/wikipedia/commons/5/58/Barking_of_a_dog_2.ogg";
+dogbark.src = "https://upload.wikimedia.org/wikipedia/commons/5/58/Barking_of_a_dog_2.ogg";
 
 window.onclick = function(event)  {
-    audio.play();
+    dogbark.play();
 }
 
 const imgs = document.getElementsByTagName("img");
