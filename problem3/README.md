@@ -1,4 +1,4 @@
-This chrome extension changes to gifs, text and also adds an audio element on the click of a mouse.
+This chrome extension changes images, text and also adds an audio element on the click of a mouse.
 
 
 -> The images in each page change to dog gifs
