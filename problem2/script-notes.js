@@ -1,5 +1,3 @@
-
-
 let counter = 0;
 function createNote() {
     counter++;
@@ -32,6 +30,8 @@ function createNote() {
         deleteBtn.remove();
         editBtn.remove();
     };
+
+
 
     editBtn.onclick = function() {
         var id = event.srcElement.id;
