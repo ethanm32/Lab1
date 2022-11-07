@@ -1,3 +1,4 @@
+import {fromEvent} from 'rxjs/operators.js'
 let counter = 0;
 function createNote() {
     counter++;
@@ -24,13 +25,13 @@ function createNote() {
     divnote.style.border = "1px solid black";
     divnote.style.borderRadius = "5px";
 
+   
     deleteBtn.onclick = function () {
         var id = event.srcElement.id;
         document.getElementById(id).innerHTML = "";
         deleteBtn.remove();
         editBtn.remove();
     };
-
 
 
     editBtn.onclick = function() {
