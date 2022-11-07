@@ -1,4 +1,3 @@
-import {fromEvent} from 'rxjs/operators.js'
 let counter = 0;
 function createNote() {
     counter++;
